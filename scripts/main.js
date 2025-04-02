@@ -77,8 +77,52 @@ const customerString = 'De afdeling Customer Service heeft ' + departments['cust
 const salesString = 'Sales is een uitdagende afdeling om te werken als Verkoopmanager. ' + departments.sales.jobs[1].description;
 
 // console.log(departments);
-console.log(medewerkersString);
-console.log(marketingString);
-console.log(customerString);
-console.log(salesString);
+// console.log(medewerkersString);
+// console.log(marketingString);
+// console.log(customerString);
+// console.log(salesString);
 
+const userInput = prompt('Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]');
+console.log('input', userInput)
+
+switch (userInput) {
+    case 'marketing':
+        console.log('Je koos Marketing')
+        console.log(departments.marketing.description);
+        break;
+    case 'sales':
+        console.log('Je koos Sales')
+        console.log(departments.sales.description);
+        break;
+    case 'customer-service':
+        console.log('Je koos Customer Service')
+        console.log(departments['customer-service'].description);
+        break;
+    default:
+        break;
+}
+
+const departmentInput = prompt('Je koos ' + userInput + '. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in. \n[0]: ' + departments[userInput].jobs[0].title + ', \n[1]: ' + departments[userInput].jobs[1].title + ', \n[2]: ' + departments[userInput].jobs[2].title + ', \n[3]: ' + departments[userInput].jobs[3].title);
+const departmentInputNumber = Number(departmentInput);
+console.log(departmentInputNumber);
+
+switch (departmentInputNumber){
+    case 0:
+        console.log('Je koos ' + departments[userInput].jobs[0].title + '. Een uitdagende rol!');
+        console.log(departments[userInput].jobs[0].description);
+        break;
+    case 1:
+        console.log('Je koos ' + departments[userInput].jobs[1].title + '. Een uitdagende rol!');
+        console.log(departments[userInput].jobs[1].description);
+        break;
+    case 2:
+        console.log('Je koos ' + departments[userInput].jobs[2].title + '. Een uitdagende rol!');
+        console.log(departments[userInput].jobs[2].description);
+        break;
+    case 3:
+        console.log('Je koos ' + departments[userInput].jobs[3].title + '. Een uitdagende rol!');
+        console.log(departments[userInput].jobs[3].description);
+        break;
+    default:
+        break;
+}
